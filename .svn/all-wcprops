@@ -1,11 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 19
-/cdbelle/!svn/ver/3
+/cdbelle/!svn/ver/4
 END
 aa.txt
 K 25
 svn:wc:ra_dav:version-url
 V 26
 /cdbelle/!svn/ver/4/aa.txt
+END
+cdbelle.sql.gz
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/cdbelle/!svn/ver/5/cdbelle.sql.gz
 END
