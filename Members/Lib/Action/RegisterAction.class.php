@@ -95,20 +95,76 @@ class RegisterAction extends Action {
 	 * 处理代理商注册
 	 */
 	public function doAgentRegister() {
-		
+		$User = M('users');
+		$salt = rand(1000, 9999);
+		$user_name = addslashes(trim($_POST['user_name']));
+		if (!empty($user_name)) {
+			$count = $User->where(array('user_name'=>$user_name))->count();
+			if (!$count) {
+				$data['user_name'] = $user_name;
+				$data['real_name'] = addslashes(trim($_POST['real_name']));
+				$data['email'] = is_email($_POST['email']) ? addslashes(trim($_POST['email'])) : '';
+				/* 密码 */
+				$new_pwd = $_POST['new_pwd'];
+				$confirm_new_pwd = $_POST['confirm_new_pwd'];
+				if ($new_pwd !== $confirm_new_pwd) {
+					$this->error('新密码与确认新密码不一致！');
+				} elseif ((strlen($new_pwd) < 6)) {
+					$this->error('密码至少6位！');
+				} elseif (strlen($new_pwd) > 5) {
+					$data['password'] = md5($new_pwd . $salt);
+				}
+				$data['reg_time'] = time();
+				$data['last_ip'] = real_ip();
+				$data['user_priv'] = C('AGENTS');
+				$data['salt'] = strval($salt);
+				$data['qq'] = addslashes(trim($_POST['qq']));
+				$data['birthday'] = trim($_POST['birthday']);
+				$data['birthday_month'] = date('m', strtotime($data['birthday']));
+				$data['mobile_phone'] = addslashes(trim($_POST['mobile_phone']));
+				$data['parent_id'] = intval($_POST['franchise']); 
+				$new_user_id = $User->add($data);
+				update_last_username($new_user_id, $data['user_name'], intval($_POST['province']), C('AGENTS'));
+//				echo $User->getLastSQL();exit;
+				if ($new_user_id) { // 会员生成成功
+					$address_data['user_id'] = $new_user_id;
+					$address_data['country'] = 1;
+					$address_data['province'] = intval($_POST['province']);
+					$address_data['city'] = intval($_POST['city']);
+					$address_data['district'] = intval($_POST['district']);
+					$address_data['address'] = addslashes(trim($_POST['address']));
+					$new_address_id = M('user_address')->add($address_data);
+					$User->where(array('user_id'=>$new_user_id))->save(array('address_id'=>$new_address_id));
+					$card_no = addslashes(trim($_POST['card_no']));
+					M('card')->where(array('card_no'=>$card_no))->save(array('user_id'=>$new_user_id, 'bind_time'=>time()));
+					session(NULL); // 清空SESSION
+					$this->success('代理商账号建立成功！', C('WEB_ROOT') . '/index.php?m=Login');
+				}
+			} else {
+				$this->error('用户名已存在！');
+			}
+		} else {
+			$this->error('登录名异常，请返回注册页面重要填写信息！');
+		}
 	}
 	
 	/**
-	 * 加盟店注册
+	 * franchise register page
 	 */
 	public function franchiseRegister() {
+		$this->assign('province_list', get_region(1, 1));
 		$this->display();
+	}
+	
+	public function doFranchiseRegister() {
+		
 	}
 	
 	/**
 	 * 忘记密码
 	 */
 	public function forgot_pwd() {
-		
+		echo '<meta charset="utf-8">';
+		echo '页面建议中...';
 	}
 }
