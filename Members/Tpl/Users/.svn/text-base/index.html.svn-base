@@ -11,6 +11,12 @@
 					<option value="1" <if condition="$_GET.is_locked eq '1'">selected</if>>锁定</option>
 					<option value="0" <if condition="$_GET.is_locked eq '0'">selected</if>>正常</option> 
 				  </select>
+			生日月份：<select name="birthday_month">
+					<option value="">不限</option>	  
+					<for start="1" end="13">
+					<option value="{$i}" <if condition="$_GET.birthday_month eq $i">selected</if>>{$i}月</option>
+					</for>
+				  </select>
 			&nbsp;<img src="__PUBLIC__/Images/search.gif" />用户名/用户邮件：<input type="text" name="user_name" value="{$_GET.user_name}" /> <input type="submit" value="搜索" />　（可进行模糊搜索）	
 			<input type="hidden" name="m" value="Users" />
 			<input type="hidden" name="a" value="index" />

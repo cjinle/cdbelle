@@ -1,0 +1,5 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>用户注册</title><link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/common.css'><style>		.reg{margin:100px auto;}
+		.reg ul li{margin:10px auto;font-size:22px;list-style:none;}
+		.reg ul li a{color:blue;}
+</style></head><body class="right-bg"><div class="r-content" style="width:800px;margin:50px auto 0;"><div class="r-content-title">用户注册</div><div class="r-content-main"><div style="color:blue;margin:5px;"><a href="__ROOT__/index.php?m=Login">&lt;&lt;返回登录页面</a></div><div class="reg"><ul><li><a href="/Members/index.php?m=Register&a=agentRegister" title="代理商注册">代理商注册&gt;&gt;</a></li><li><a href="/Members/index.php?m=Register&a=franchiseRegister" title="加盟店注册">加盟店注册&gt;&gt;</a></li><li><a href="/Members/index.php?m=Register&a=userRegister" title="会员注册">会员注册&gt;&gt;</a></li></ul></div></div><!--// .r-content-main--></div><!--// .r-content--><div class="copyright">&copy; Copyright 2010 Your Company </div></body></html>

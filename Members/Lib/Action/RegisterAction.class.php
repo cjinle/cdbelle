@@ -9,6 +9,10 @@ class RegisterAction extends Action {
 	 * 注册页面（默认）
 	 */
 	public function index() {
+		$this->display();
+	}
+	
+	public function userRegister() {
 		$franchise_list = M('users')->field('user_id,user_name,real_name')->where(array('user_priv'=>C('FRANCHISE')))->select();
 		$this->assign('franchise_list', $franchise_list);
 		$this->assign('province_list', get_region(1, 1));
@@ -16,7 +20,7 @@ class RegisterAction extends Action {
 	}
 	
 	/**
-	 * 处理注册页面
+	 * 处理会员注册页面
 	 */
 	public function doRegister() {
 		$User = M('users');
@@ -50,8 +54,11 @@ class RegisterAction extends Action {
 				$data['user_priv'] = C('USERS');
 				$data['salt'] = strval($salt);
 				$data['qq'] = addslashes(trim($_POST['qq']));
+				$data['birthday'] = trim($_POST['birthday']);
+				$data['birthday_month'] = date('m', strtotime($data['birthday']));
 				$data['mobile_phone'] = addslashes(trim($_POST['mobile_phone']));
 				$data['parent_id'] = intval($_POST['franchise']); 
+//				var_dump($data);exit;
 				$new_user_id = $User->add($data);
 //				echo $User->getLastSQL();exit;
 				if ($new_user_id) { // 会员生成成功
@@ -74,6 +81,20 @@ class RegisterAction extends Action {
 		} else {
 			$this->error('用户不能为空！');
 		}
+	}
+	
+	/**
+	 * 代理商注册
+	 */
+	public function agentRegister() {
+		$this->display();
+	}
+	
+	/**
+	 * 加盟店注册
+	 */
+	public function franchiseRegister() {
+		$this->display();
 	}
 	
 	/**

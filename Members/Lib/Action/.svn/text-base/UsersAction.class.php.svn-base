@@ -23,6 +23,12 @@ class UsersAction extends InitAction {
 				$where['is_locked'] = 1;
 			}
 		}
+		if (isset($_GET['birthday_month'])) { // 按生日月份来查询
+			$birthday_month = intval($_GET['birthday_month']);
+			if ($birthday_month >= 1 && $birthday_month <= 12) {
+				$where['birthday_month'] = $birthday_month;
+			} 
+		}
 		if (isset($_GET['parent_id'])) { 
 			$where['parent_id'] = intval($_GET['parent_id']);
 		}

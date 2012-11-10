@@ -45,4 +45,22 @@ class AjaxAction extends Action {
 		die(check_card_no_is_available($_GET['card_no']));
 	}
 	
+	/**
+	 * 根据地区生成代理商用户名
+	 */
+	public function create_agent_username() {
+		$region_id = intval($_GET['region_id']);
+		$user_priv = intval($_GET['user_priv']);
+		die(get_next_agents_username($region_id, $user_priv));
+	}
+	
+	/**
+	 * 根据代理商生成(加盟店/会员)用户名
+	 */
+	public function create_next_username() {
+		$parent_id = intval($_GET['parent_id']);
+		$user_priv = intval($_GET['user_priv']);
+		die(get_next_username($parent_id, $user_priv));
+	}
+	
 }

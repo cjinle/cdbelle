@@ -235,3 +235,37 @@ function get_card_no($user_id) {
 		return M('card')->where(array('user_id'=>$user_id))->getField('card_no');
 	}
 }
+
+/**
+ * 获取下一个代理商用户名
+ * @param integer $region_id
+ * @param integer $user_priv
+ * @return string
+ */
+function get_next_agents_username($region_id, $user_priv) {
+	if ($region_id && $user_priv) {
+		$where['region_id&user_priv'] = array($region_id, $user_priv, '_multi'=>true);
+		$last_num = M('last_username')->where($where)->getField('last_num');
+		$prefix = M('region')->where(array('region_id'=>$region_id))->getField('region_pinyin');
+		if (is_null($last_num)) {
+			$last_num = $user_priv == C('AGENTS') ? $prefix . '001' : '';
+		} else {
+			$last_num = $prefix . sprintf("%03d", intval($last_num) + 1);
+		}
+		return $last_num;
+	}
+}
+
+/**
+ * 获取下一个(加盟店/会员)用户名
+ * @param integer $parent_id
+ * @param integer $user_priv
+ * @return string
+ */
+function get_next_username($parent_id, $user_priv) {
+	if ($parent_id && $user_priv) {
+		$where['user_id&user_priv'] = array($parent_id, $user_priv, '_multi'=>true);
+		$last_name = M('last_username')->where($where)->field('user_name,last_num')->find();
+		return $last_name ? $last_name['user_name'] . sprintf("%03d", intval($last_name['last_num']) + 1) : null;
+	}
+}

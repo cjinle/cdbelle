@@ -5,6 +5,7 @@ return array(
 	'WEB_HOST' 				=> 'http://cdbelle.com.cn/',
 	'WEB_ROOT'				=> '/Members',
 	'LIST_ROWS'				=>	20,
+	'APP_STATUS'			=>	'debug',
 	
 	/* 权限配置 */
 	'ADMIN'					=>	1,
@@ -12,6 +13,7 @@ return array(
 	'FRANCHISE'				=>	3,
 	'USERS'					=>	4,
 	'OPERATOR'				=>	5,
+	'COUSTOM_SERVICE'		=>	6,
 
     /* Cookie设置 */
     'COOKIE_EXPIRE'         => 3600,    // Coodie有效期

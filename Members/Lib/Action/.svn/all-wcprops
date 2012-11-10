@@ -49,7 +49,7 @@ UsersAction.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/cdbelle/!svn/ver/2/Members/Lib/Action/UsersAction.class.php
+/cdbelle/!svn/ver/6/Members/Lib/Action/UsersAction.class.php
 END
 FranchiseAction.class.php
 K 25
@@ -61,7 +61,7 @@ AjaxAction.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/cdbelle/!svn/ver/2/Members/Lib/Action/AjaxAction.class.php
+/cdbelle/!svn/ver/6/Members/Lib/Action/AjaxAction.class.php
 END
 InitAction.class.php
 K 25
@@ -73,5 +73,5 @@ RegisterAction.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/cdbelle/!svn/ver/2/Members/Lib/Action/RegisterAction.class.php
+/cdbelle/!svn/ver/6/Members/Lib/Action/RegisterAction.class.php
 END
