@@ -87,7 +87,15 @@ class RegisterAction extends Action {
 	 * 代理商注册
 	 */
 	public function agentRegister() {
+		$this->assign('province_list', get_region(1, 1));
 		$this->display();
+	}
+	
+	/**
+	 * 处理代理商注册
+	 */
+	public function doAgentRegister() {
+		
 	}
 	
 	/**

@@ -15,15 +15,13 @@
 		<div class="r-content-title">代理商注册</div>	
 		<div class="r-content-main">
 			<div style="color:blue;margin:5px;"><a href="__ROOT__/index.php?m=Register&a=index">&lt;&lt;返回上一页面</a></div>
-			<form action="__ROOT__/index.php?m=Register&a=doRegister" method="POST">
+			<form action="__ROOT__/index.php?m=Register&a=doAgentRegister" method="POST">
 			<table width="700" border="0" cellpadding="5" cellspacing="5" style="margin:50px;">
 				<tr>
 					<td align="right" width="280"><span class="mark">*</span>登录名：</td>
 					<td>
-						<input type="text" name="user_name" id="user_name" value="" /> 
-						<a href="javascript:void(0)" id="check_user_name">检测用户名</a> 
-						<img src="__PUBLIC__/Images/loading2.gif" id="loading_icon" style="display:none;" /> 
-						<span class="alert_msg" style="display:none;margin:0 5px;color:red;"></span>
+						<input type="text" name="user_name" id="user_name" value="" readonly="readonly" class="readonly" /> 
+						<span class="tips">当选择所属地区时，登录名由系统自动生成。</span>
 					</td>	
 				</tr>
 				<tr>
@@ -35,15 +33,6 @@
 					<td><input type="text" name="email" value="" /></td>	
 				</tr>
 				<tr>
-					<td align="right"><span class="mark">*</span>卡号：</td>
-					<td>
-						<input type="text" name="card_no" value="" />
-						<a href="javascript:void(0)" id="check_card_no">验证卡号</a> 
-						<img src="__PUBLIC__/Images/loading2.gif" id="loading_icon2" style="display:none;" /> 
-						<span class="alert_msg2" style="display:none;margin:0 5px;color:red;"></span>
-					</td>		
-				</tr>
-				<tr>
 					<td align="right">QQ：</td>	
 					<td><input type="text" name="qq" value="" /></td>
 				</tr>
@@ -52,26 +41,7 @@
 					<td><input type="text" name="mobile_phone" value="" /></td>
 				</tr>
 				<tr>
-					<td align="right">出生日期：</td>	
-					<td>
-						<input type="text" name="birthday" value="1985-01-01" onClick="WdatePicker()" class="Wdate" /> （可能会有神秘礼物）
-					</td>
-				</tr>
-				<?php if ($franchise_list) : ?>
-				<tr>
-					<td align="right">所属加盟店：</td>	
-					<td>
-						<select name="franchise">
-							<option value="0">未选择加盟店</option>
-							<foreach name="franchise_list" item="item">
-							<option value="{$item.user_id}" <?php if ($user_info['parent_id'] == $item['user_id']) { echo 'selected';} ?>>{$item.real_name} - {$item.user_name}</option>
-							</foreach>
-						</select>	
-					</td>
-				</tr>
-				<?php endif; ?>
-				<tr>
-					<td align="right">地区：</td>
+					<td align="right"><span class="mark">*</span>地区：</td>
 					<td>
 						<select name="province" id="province">
 							<option value="0">请选择</option>
@@ -103,9 +73,8 @@
 					<td align="right">
 						<input type="submit" value="注册" />
 					</td>
-					<td><input type="reset" value="重置" /></td>
+					<td><input type="button" value="返回" onclick="javascript:history.go(-1)" /></td>
 				</tr>
-				
 					
 			</table>
 			</form>
@@ -118,77 +87,17 @@
 <script src="__PUBLIC__/Js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$("a#check_user_name").click(function(){
-		if ($("input#user_name").val() == "") {
-			$("span.alert_msg").css('color', 'red');
-			$("span.alert_msg").html("用户名不能为空！");
-			$("span.alert_msg").show();
-			return false;
-		}
-		$("img#loading_icon").show();
-		$.get(
-			'__ROOT__/index.php?m=Ajax&a=check_user_name',
-			'user_name=' + $("input#user_name").val(),
-			function(data){
-				if (data == 0) {
-					$("span.alert_msg").css('color', 'green');
-					$("span.alert_msg").html("用户名可用！");
-					$("span.alert_msg").show();
-				}
-				else if (data > 0) {
-					$("span.alert_msg").css('color', 'red');
-					$("span.alert_msg").html("用户名不可用！");
-					$("span.alert_msg").show();
-				}
-				$("img#loading_icon").hide();
-			}
-		);	
-	});
-	$("a#check_card_no").click(function(){
-		if ($("input[name='card_no']").val() == "") {
-			$("span.alert_msg2").css('color', 'red');
-			$("span.alert_msg2").html("卡号不能为空！");
-			$("span.alert_msg2").show();
-			return false;
-		}
-		$("img#loading_icon2").show();
-		$.get(
-			'__ROOT__/index.php?m=Ajax&a=check_card_no',
-			'card_no=' + $("input[name='card_no']").val(),
-			function(data){
-				if (data == 0) {
-					$("span.alert_msg2").css('color', 'green');
-					$("span.alert_msg2").html("卡号可用！");
-					$("span.alert_msg2").show();
-				}
-				else if (data == 1) {
-					$("span.alert_msg2").css('color', 'red');
-					$("span.alert_msg2").html("卡号已绑定其它会员！");
-					$("span.alert_msg2").show();
-				}
-				else if (data == 2){
-					$("span.alert_msg2").css('color', 'red');
-					$("span.alert_msg2").html("卡号不存在！");
-					$("span.alert_msg2").show();	
-				}
-				$("img#loading_icon2").hide();
-			}
-		);	
-	});
 	$("form").submit(function(){
 		var msg = '';
 		var pwd = $("input[name='new_pwd']").val();
-		if ($("input[name='user_name']").val() == "") {
-			msg += "用户不能为空\n";
-		}
 		if ($("input[name='real_name']").val() == "") {
-			msg += "用户别名不能为空\n";
+			msg += "名字不能为空\n";
 		}
 		if ($("input[name='email']").val() == "") {
 			msg += "邮件不能为空\n";
 		}
-		if ($("input[name='card_no']").val() == "") {
-			msg += "卡号不能为空\n";
+		if ($("input[name='user_name']").val() == "") {
+			msg += "必须选择所属地区\n";
 		}
 		if (pwd.length < 6) {
 			msg += "密码不能少于6位\n";
@@ -208,6 +117,13 @@ $(document).ready(function(){
 			'region_type=2&parent_id=' + this.value,
 			function(data){
 				$("#city").html(data);	
+			}
+		);
+		$.get(
+			'__ROOT__/index.php?m=Ajax&a=create_agent_username',
+			'user_priv=2&region_id=' + this.value,
+			function(data){
+				$("input#user_name").val(data);		
 			}
 		);
 	});

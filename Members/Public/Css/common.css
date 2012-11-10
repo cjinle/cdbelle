@@ -69,6 +69,8 @@ table.t1 tr.a1{
 
 .mark,.error{color:red;}
 .success{color:green;}
+.readonly{background:#EEE;color:blue;font-weight:bold;}
+.tips{color:green;}
 
 .bulletin{margin:20px 50px;}
 .bulletin .bulletin-title{text-align:center;font-size:18px;font-weight:bold;}
