@@ -1,0 +1,68 @@
+<include file="Public:header" />
+	
+
+<div class="r-content">
+		<div class="r-content-title">会员卡号编辑</div>	
+		<div class="r-content-main">
+			<form action="__ROOT__/index.php?m=Card&a=update" method="POST">
+			<table width="500" border="0" cellpadding="5" cellspacing="5" style="margin:20px 0 20px 100px;">
+				<tr>
+					<td align="right">卡号：</td>
+					<td>{$card_info.card_no}</td>	
+				</tr>
+				<tr>
+					<td align="right">插入时间：</td>
+					<td>{$card_info.add_time}</td>	
+				</tr>
+				<tr>
+					<td align="right">绑定情况：</td>
+					<td>{$card_info.bind_status}</td>	
+				</tr>
+				<tr>
+					<td align="right">绑定时间：</td>	
+					<td>{$card_info.bind_time}</td>
+				</tr>
+				<tr>
+					<td align="right">绑定会员：</td>	
+					<td>
+						<if condition="$card_info.is_bind eq 1">
+						{$card_info.user_name} 
+						<else />
+						<input type="text" name="user_name" id="user_name" /> （用户名）
+						</if>
+						
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="hidden" name="is_bind" value="{$card_info.is_bind}" />	
+						<input type="hidden" name="card_no" value="{$card_info.card_no}" />	
+					</td>
+					<td><input type="submit" value="{$card_info.submit_val}" /></td>
+				</tr>
+				
+					
+			</table>
+			</form>
+				
+		</div><!--// .r-content-main-->
+		
+		
+	</div><!--// .r-content-->
+
+<script src="__PUBLIC__/Js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("form").submit(function(){
+		if ($("#user_name").val() == "") {
+			alert("用户名不能为空！");
+			return false;
+		}
+	});
+
+});
+</script>
+
+	
+	
+<include file="Public:footer" />

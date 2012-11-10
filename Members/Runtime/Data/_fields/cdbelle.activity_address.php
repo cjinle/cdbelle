@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'address_id', 1 => 'address_name', 2 => 'activity_id', 3 => 'user_id', 4 => 'consignee', 5 => 'email', 6 => 'country', 7 => 'province', 8 => 'city', 9 => 'district', 10 => 'address', 11 => 'zipcode', 12 => 'tel', 13 => 'mobile', 14 => 'sign_building', 15 => 'best_time', '_autoinc' => true, '_pk' => 'address_id', ); ?>

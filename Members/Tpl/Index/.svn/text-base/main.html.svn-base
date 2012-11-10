@@ -1,0 +1,18 @@
+<include file="Public:header" />
+
+<div class="r-content">
+		<div class="r-content-title">公告查看</div>	
+		<div class="r-content-main">
+			<div class="bulletin">
+				<h3 class="bulletin-title">{$bulletin.title}</h3>
+				<div class="bulletin-addtime">{$bulletin.add_time}</div>
+				<div class="bulletin-content">{$bulletin.content}</div>
+			</div>
+			
+			
+		</div><!--// .r-content-main-->
+		
+		
+	</div><!--// .r-content-->
+
+<include file="Public:footer" />

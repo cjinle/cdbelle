@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>管理系统</title>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/common.css'>
+</head>
+
+<body class="right-bg">
+	<div class="top-bar">
+			→ 欢迎<span style="color:red;">{$_SESSION.user_name}</span>, （<span style="color:;">{$_SESSION.priv_name}</span>）进入会员管理系统
+			<span class="back-to-index"><img src="__PUBLIC__/Images/home.gif" style="line-height:25px;"/><a href="__ROOT__/index.php?m=Index&a=main">返回主首页</a></span>
+	</div><!--// .top-bar-->

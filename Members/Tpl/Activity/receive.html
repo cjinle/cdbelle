@@ -1,0 +1,109 @@
+<include file="Public:header" />
+<script type="text/javascript">
+<!--
+	/* window.UEDITOR_HOME_URL = location.pathname.substr(0, location.pathname.lastIndexOf('/')) + '/'; */
+	window.UEDITOR_HOME_URL = "__PUBLIC__/Js/ueditor/";
+//-->
+</script>
+<script type="text/javascript" src="__PUBLIC__/Js/ueditor/editor_config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/ueditor/editor.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/My97DatePicker/WdatePicker.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/Js/ueditor/themes/default/ueditor.css" />
+	
+
+<div class="r-content">
+		<div class="r-content-title">领取优惠</div>	
+		<div class="r-content-main">
+			<form action="__ROOT__/index.php?m=Activity&a=doReceive" method="POST">
+			<table width="900" border="0" cellpadding="5" cellspacing="5" style="margin:20px 0 20px 50px;">
+				<tr>
+					<td align="right" width="100">优惠标题：</td>
+					<td>{$activity_info.title}</td>	
+				</tr>
+				<tr>
+					<td align="right">是否公开：</td>	
+					<td>{$activity_info.is_open}</td>
+				</tr>
+				<tr>
+					<td align="right">是否留地址：</td>	
+					<td>{$activity_info.act_type}</td>
+				</tr>
+				<tr>
+					<td align="right">起止日期：</td>	
+					<td>
+						{$activity_info.start_date} ~
+						{$activity_info.end_date}
+					</td>
+				</tr>
+				<tr>
+					<td align="right">内容：</td>	
+					<td>{$activity_info.content}</td>
+				</tr>
+				<tr>
+					<td align="right">地址：</td>	
+					<td>
+						<select name="province" id="province">
+							<option value="0">请选择</option>
+							<foreach name="province_list" item="item">
+							<option value="{$item.region_id}">{$item.region_name}</option>
+							</foreach>
+						</select> 
+						<select name="city" id="city">
+							<option value="0">请选择</option>
+						</select> 
+						<select name="district" id="district">
+							<option value="0">请选择</option>
+						</select>	
+						<input type="text" style="width:300px;" name="address" value="" />	
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<input type="hidden" name="aid" value="{$activity_info.aid}" />
+						<input type="submit" value="提交" />
+					</td>
+					<td><input type="button" value="返回" onclick="javascript:history.go(-1);" /></td>
+				</tr>
+				
+					
+			</table>
+			</form>
+				
+		</div><!--// .r-content-main-->
+		
+		
+	</div><!--// .r-content-->
+
+<script src="__PUBLIC__/Js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("form").submit(function(){
+		if ($("input[name='address']").val() == "") {
+			alert("地址不能为空");
+			return false;
+		}
+	});
+	$("#province").change(function(){
+		$.get(
+			'__ROOT__/index.php?m=Ajax&a=get_region',
+			'region_type=2&parent_id=' + this.value,
+			function(data){
+				$("#city").html(data);	
+			}
+		);
+	});
+	$("#city").change(function(){
+		$.get(
+			'__ROOT__/index.php?m=Ajax&a=get_region',
+			'region_type=3&parent_id=' + this.value,
+			function(data){
+				$("#district").html(data);	
+			}
+		);
+	});
+});
+</script>
+
+	
+	
+<include file="Public:footer" />

@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'user_id', 1 => 'email', 2 => 'user_name', 3 => 'real_name', 4 => 'password', 5 => 'sex', 6 => 'birthday', 7 => 'rank_points', 8 => 'address_id', 9 => 'reg_time', 10 => 'last_login', 11 => 'last_ip', 12 => 'user_priv', 13 => 'user_rank', 14 => 'salt', 15 => 'parent_id', 16 => 'qq', 17 => 'mobile_phone', 18 => 'is_validated', 19 => 'is_locked', '_autoinc' => true, '_pk' => 'user_id', ); ?>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>主页面</title>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/css/common.css'>
+</head>
+
+<body class="right-bg">
+	<div class="top-bar">
+			→ 欢迎进入会员管理系统
+			<span class="back-to-index"><a href="__ROOT__/index.php?m=Index&a=main">返回主首页</a></span>
+	</div><!--// .top-bar-->
+	
+	<div class="r-content">
+		<div class="r-content-title">内容标题</div>	
+		<div class="r-content-main">
+		<table width="100%" class="tableborder" border="0" cellpadding="2" cellspacing="1">
+            <thead>
+              <tr>
+                <th>
+                  <input class="check-all" type="checkbox">
+                </th>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+               <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+               <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+               <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+               <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+               <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+               <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+               <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+               <tr class="alt-row">
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>Lorem ipsum dolor</td>
+                <td><a href="#" title="title">Sit amet</a></td>
+                <td>Consectetur adipiscing</td>
+                <td>Donec tortor diam</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="#" title="Edit">编辑</a> <a href="#" title="Delete">删除</a> <a href="#" title="Edit Meta">添加</a> </td>
+              </tr>
+              
+              
+   
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="6">
+                  <div class="bulk-actions align-left">
+                    <select name="dropdown">
+                      <option value="option1">Choose an action...</option>
+                      <option value="option2">Edit</option>
+                      <option value="option3">Delete</option>
+                    </select>
+                    <a class="button" href="#">Apply to selected</a> </div>
+                  <div class="pagination"> <a href="#" title="First Page">第一页</a><a href="#" title="Previous Page">上一页</a> <a href="#" class="number" title="1">1</a> <a href="#" class="number" title="2">2</a> <a href="#" class="number current" title="3">3</a> <a href="#" class="number" title="4">4</a> <a href="#" title="Next Page">下一页</a><a href="#" title="Last Page">最后一页</a> </div>
+                  <!-- End .pagination -->
+                  <div class="clear"></div>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+			
+				
+		</div><!--// .r-content-main-->
+		
+		
+	</div><!--// .r-content-->
+	<div class="copyright">&copy; Copyright 2010 Your Company </div>
+</body>
+</html>

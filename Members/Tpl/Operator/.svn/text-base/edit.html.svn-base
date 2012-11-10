@@ -1,0 +1,62 @@
+<include file="Public:header" />
+	
+
+<div class="r-content">
+		<div class="r-content-title">操作员编辑</div>	
+		<div class="r-content-main">
+			<form action="__ROOT__/index.php?m=Operator&a=update" method="POST">
+			<table width="700" border="0" cellpadding="5" cellspacing="5" style="margin:20px 0 20px 50px;">
+				<tr>
+					<td align="right">用户名：</td>
+					<td>{$user_info.user_name}</td>	
+				</tr>
+				<tr>
+					<td align="right">角色：</td>	
+					<td>
+						<select name="user_priv">
+							<foreach name="priv_list" item="item">
+							<option value="{$item.up_id}" <?php if ($user_info['user_priv'] == $item['up_id']) { echo 'selected';} ?>>{$item.priv_name}</option>
+							</foreach>
+						</seelct>	
+					</td>
+				</tr>
+
+				<tr>
+					<td align="right">状态：</td>
+					<td>{$user_info.status}</td>
+				</tr>
+				<tr>
+					<td align="right">新密码：</td>	
+					<td><input type="password" name="new_pwd" value="" /></td>
+				</tr>
+				<tr>
+					<td align="right">确认新密码：</td>	
+					<td><input type="password" name="confirm_new_pwd" value="" /></td>
+				</tr>
+				<tr>
+					<td align="right">
+						<input type="hidden" name="user_id" value="{$user_info.user_id}" />	
+						<input type="submit" value="提交" />
+					</td>
+					<td><input type="button" value="返回" onclick="javascript:history.go(-1);" /></td>
+				</tr>
+				
+					
+			</table>
+			</form>
+				
+		</div><!--// .r-content-main-->
+		
+		
+	</div><!--// .r-content-->
+
+<script src="__PUBLIC__/Js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+});
+</script>
+
+	
+	
+<include file="Public:footer" />

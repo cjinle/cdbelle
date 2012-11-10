@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/cdbelle/!svn/ver/2/Members/Lib/Action
+END
+IndexAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/cdbelle/!svn/ver/2/Members/Lib/Action/IndexAction.class.php
+END
+LoginAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/cdbelle/!svn/ver/2/Members/Lib/Action/LoginAction.class.php
+END
+CardAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/cdbelle/!svn/ver/2/Members/Lib/Action/CardAction.class.php
+END
+OperatorAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/cdbelle/!svn/ver/2/Members/Lib/Action/OperatorAction.class.php
+END
+ActivityAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/cdbelle/!svn/ver/2/Members/Lib/Action/ActivityAction.class.php
+END
+BulletinAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/cdbelle/!svn/ver/2/Members/Lib/Action/BulletinAction.class.php
+END
+AgentsAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/cdbelle/!svn/ver/2/Members/Lib/Action/AgentsAction.class.php
+END
+UsersAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/cdbelle/!svn/ver/2/Members/Lib/Action/UsersAction.class.php
+END
+FranchiseAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/cdbelle/!svn/ver/2/Members/Lib/Action/FranchiseAction.class.php
+END
+AjaxAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/cdbelle/!svn/ver/2/Members/Lib/Action/AjaxAction.class.php
+END
+InitAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/cdbelle/!svn/ver/2/Members/Lib/Action/InitAction.class.php
+END
+RegisterAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/cdbelle/!svn/ver/2/Members/Lib/Action/RegisterAction.class.php
+END

@@ -1,0 +1,76 @@
+/* common.css Lok 2012/9/15 */
+body {font-size:12px;}
+.none{display:none;}
+.left-bg{background-color:#799AE1;}
+.right-bg{background-color:#D6DFF7;margin:0;padding:0;}
+.top-bar{font-size:12px;height:25px;line-height:25px;background-color:#799ae1;color:#FFFFFF;padding:0 10px;}
+.back-to-index{float:right;}
+.back-to-index a{color:#FFFFFF;}
+.r-content{border:1px solid #6595D6;margin:10px 8px;background-color:#FFFFFF;}
+.r-content-title{font-weight:bold;height:25px;line-height:25px;background-color:#4455aa;color:#FFFFFF;text-align:center;}
+.r-content-main{}
+.r-content-main .r-search{padding:10px;background-color:#F0F0F0;height:26px;}
+
+/* table style */
+table{table-layout:fixed;empty-cells:show;border-collapse: collapse;margin:0 auto;}
+.tableborder{background-color:#F0F0F0;border:1px solid #FFFFFF;}
+.tableborder tr,.tableborder td,.tableborder th{border:1px solid #FFFFFF;}
+.tableborder th {color:#FFFFFF;background-color:#799AE1;}
+.tableborder tbody tr.t2tr{background-color:#DDDDDD;}
+.tableborder tbody tr:hover{background-color:#f6f6f6;}
+.tableborder td a{color:blue;text-decoration:none;}
+.tableborder td a:hover{color:#428eff;text-decoration:underline;}
+
+
+/*
+td{
+	height:20px;
+}
+table.t1{
+	border:1px solid #cad9ea;
+	color:#666;
+}
+table.t1 th {
+	background-image: url(th_bg1.gif);
+	background-repeat::repeat-x;
+	height:30px;
+}
+table.t1 td,table.t1 th{
+	border:1px solid #cad9ea;
+	padding:0 1em 0;
+}
+table.t1 tr.a1{
+	background-color:#f5fafe;
+}
+*/
+
+.pagination{margin:10px 0;text-align:center;}
+.pagination a{margin:0 2px;color:#000000;}
+.pagination a:hover{color:#6595D6;}
+.pagination .current{font-weight:bold;}
+
+
+
+/* left style */
+.left-bg a{text-decoration:none;color:#000000;}
+.left-bg a:hover{color:#428eff;text-decoration:underline;}
+.left-bg .left-item{margin-bottom:15px;width:175px;}
+.left-bg ul{padding:5px 10px;margin:0;background-color:#D6DFF7;border:1px solid #FFFFFF;}
+.left-bg li{margin:3px 0;padding:0;list-style-type: none;}
+.left-bg .sub-title,.left-bg .sub-title2,.left-bg .sub-title3,.left-bg .sub-title0{padding-left:10px;color:#215dc6;font-weight:bold;height:25px;line-height:25px;background-image:url(/Members/Public/Images/admin_left_2.gif);}
+.left-bg .sub-title2{background-image:url(/Members/Public/Images/admin_left_1.gif);}
+.left-bg .sub-title3{background-image:url(/Members/Public/Images/admin_left_9.gif);}
+.left-bg .sub-title0{height:38px;line-height:38px;background-image:url(/Members/Public/Images/title.gif);}
+.copyright{text-align:center;margin:10px auto;}
+
+/* card no upload */
+.r-content-main fieldset{border:1px solid #AAAAAA;margin:10px;}
+
+
+.mark,.error{color:red;}
+.success{color:green;}
+
+.bulletin{margin:20px 50px;}
+.bulletin .bulletin-title{text-align:center;font-size:18px;font-weight:bold;}
+.bulletin .bulletin-addtime{color:green;text-align:center;}
+.bulletin .bulletin-content{line-height:15px;font-size:13px;display:block;}
