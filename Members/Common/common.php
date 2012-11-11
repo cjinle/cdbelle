@@ -266,7 +266,14 @@ function get_next_username($parent_id, $user_priv) {
 	if ($parent_id && $user_priv) {
 		$where['user_id&user_priv'] = array($parent_id, $user_priv, '_multi'=>true);
 		$last_name = M('last_username')->where($where)->field('user_name,last_num')->find();
-		return $last_name ? $last_name['user_name'] . sprintf("%03d", intval($last_name['last_num']) + 1) : null;
+		$new_name = '';
+		if ($last_name) {
+			$new_name = $last_name['user_name'] . sprintf("%03d", intval($last_name['last_num']) + 1);
+		} else {
+			$user_name = M("users")->where(array('user_id'=>$parent_id))->getField('user_name');
+			$new_name = $user_name . '001';
+		}
+		return $new_name;
 	}
 }
 
@@ -292,6 +299,29 @@ function update_last_username($user_id, $user_name, $region_id, $user_priv) {
 		$data['region_id'] = $region_id;
 		$data['user_priv'] = $user_priv;
 		$LastUsername->add($data);
+	}
+}
+
+/**
+ * get agent province id
+ * @param integer $user_id
+ * @return integer
+ */
+function get_agent_province($user_id) {
+	if ($user_id) {
+		$User = M('users');
+		$UserAdress = M('user_address');
+		$user_priv = $User->where(array('user_id'=>$user_id))->getField('user_priv');
+		if ($user_priv == C('AGENTS')) {
+			return $UserAdress->where(array('user_id'=>$user_id))->getField('province');
+		} elseif ($user_priv == C('FRANCHISE')) {
+			$parent_id = $User->where(array('user_id'=>$user_id))->getField('parent_id');
+			return $UserAdress->where(array('user_id'=>$parent_id))->getField('province');
+		} elseif ($user_priv == C('USERS')) {
+			$parent_id = $User->where(array('user_id'=>$user_id))->getField('parent_id');
+			$top_parent_id = $User->where(array('user_id'=>$parent_id))->getField('parent_id');
+			return $UserAdress->where(array('user_id'=>$top_parent_id))->getField('province');
+		}
 	}
 }
 

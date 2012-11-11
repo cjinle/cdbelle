@@ -5,10 +5,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv='Refresh' content='{$waitSecond};URL={$jumpUrl}'>
 <style>
-html, body{margin:0; padding:0; border:0 none;font:14px Tahoma,Verdana;line-height:150%;background:#f6f6f6;}
+html, body{margin:0; padding:0; border:0 none;font:14px Tahoma,Verdana;line-height:150%;background:#D6DFF7;}
 a{text-decoration:none; color:#174B73; border-bottom:1px dashed gray}
 a:hover{color:#F60; border-bottom:1px dashed gray}
-div.message{margin:10% auto 0px auto;clear:both;padding:5px;border:1px solid #6595D6; text-align:center; width:45%}
+div.message{margin:10% auto 0px auto;clear:both;padding:5px;border:1px solid #6595D6;background:white; text-align:center; width:45%}
 span.wait{color:blue;font-weight:bold;}
 span.error{color:red;font-weight:bold}
 span.success{color:blue;font-weight:bold}

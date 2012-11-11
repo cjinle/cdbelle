@@ -3,9 +3,39 @@ svn:wc:ra_dav:version-url
 V 40
 /cdbelle/!svn/ver/2/Members/Tpl/Register
 END
+复件 index.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/cdbelle/!svn/ver/7/Members/Tpl/Register/%E5%A4%8D%E4%BB%B6%20index.html
+END
+agentRegister.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/cdbelle/!svn/ver/7/Members/Tpl/Register/agentRegister.html
+END
+userRegister.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/cdbelle/!svn/ver/8/Members/Tpl/Register/userRegister.html
+END
+agentRegister2.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/cdbelle/!svn/ver/8/Members/Tpl/Register/agentRegister2.html
+END
 index.html
 K 25
 svn:wc:ra_dav:version-url
 V 51
-/cdbelle/!svn/ver/6/Members/Tpl/Register/index.html
+/cdbelle/!svn/ver/8/Members/Tpl/Register/index.html
+END
+franchiseRegister.html
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/cdbelle/!svn/ver/8/Members/Tpl/Register/franchiseRegister.html
 END

@@ -13,7 +13,7 @@ LoginAction.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/cdbelle/!svn/ver/2/Members/Lib/Action/LoginAction.class.php
+/cdbelle/!svn/ver/8/Members/Lib/Action/LoginAction.class.php
 END
 CardAction.class.php
 K 25
@@ -73,5 +73,5 @@ RegisterAction.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/cdbelle/!svn/ver/6/Members/Lib/Action/RegisterAction.class.php
+/cdbelle/!svn/ver/8/Members/Lib/Action/RegisterAction.class.php
 END

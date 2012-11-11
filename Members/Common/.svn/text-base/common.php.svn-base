@@ -1,7 +1,7 @@
 <?php
 /**
  * common.php 
- * 公共函数库
+ * common functions library
  * @author Lok Sun Sep 16 00:51:29 CST 2012
  */
 
@@ -25,7 +25,7 @@ function is_email($user_email)
 }
 
 /**
- * 获得用户的真实IP地址
+ * get user real ip address
  * @access  public
  * @return  string
  */
@@ -101,7 +101,7 @@ function sub_str($str, $length = 0, $append = true) {
 }
 
 /**
- * 根据会员ID获取会员信息
+ * get user informations by user_id
  * @param integer $user_id
  * @return array
  */
@@ -119,7 +119,7 @@ function get_user_info($user_id, $user_name = '') {
 }
 
 /**
- * 根据类型获取会员列表
+ * get user list by type
  * @param integer $user_priv
  * @return array
  */
@@ -130,7 +130,7 @@ function get_users_by_type($user_priv = 4) {
 }
 
 /**
- * 根据ID找用户名
+ * get user name by user_id
  * @param integer $user_id
  * @return string
  */
@@ -141,7 +141,7 @@ function get_user_name($user_id) {
 }
 
 /**
- * 权限检测 
+ * privilege check
  * @param string $code
  * @param integer $return_type
  * @return boolean
@@ -165,7 +165,7 @@ function user_priv($code = '', $return_type = 1) {
 }
 
 /**
- * 获取地区名称
+ * get region name
  * @param integer $region_id
  * @return string
  */
@@ -176,7 +176,7 @@ function get_region_name($region_id) {
 }
 
 /**
- * 获取地列表
+ * get address list
  * @param integer $parent_id
  * @param integer $region_type
  * @return array
@@ -189,7 +189,7 @@ function get_region($parent_id, $region_type) {
 
 
 /**
- * 获取用户地址
+ * get user address
  * @param integer $user_id
  * @return array
  */
@@ -209,7 +209,7 @@ function get_user_address($user_id) {
 }
 
 /**
- * 检测卡号是否可用
+ * check card number available
  * @param string $card_no
  * @return integer
  */
@@ -226,7 +226,7 @@ function check_card_no_is_available($card_no) {
 }
 
 /**
- * 获取会员绑定的卡号
+ * get card number which is banded.
  * @param integer $user_id
  * @return string
  */
@@ -237,7 +237,7 @@ function get_card_no($user_id) {
 }
 
 /**
- * 获取下一个代理商用户名
+ * get next agent user name
  * @param integer $region_id
  * @param integer $user_priv
  * @return string
@@ -257,7 +257,7 @@ function get_next_agents_username($region_id, $user_priv) {
 }
 
 /**
- * 获取下一个(加盟店/会员)用户名
+ * get next (franchise/member) user name
  * @param integer $parent_id
  * @param integer $user_priv
  * @return string
@@ -266,6 +266,93 @@ function get_next_username($parent_id, $user_priv) {
 	if ($parent_id && $user_priv) {
 		$where['user_id&user_priv'] = array($parent_id, $user_priv, '_multi'=>true);
 		$last_name = M('last_username')->where($where)->field('user_name,last_num')->find();
-		return $last_name ? $last_name['user_name'] . sprintf("%03d", intval($last_name['last_num']) + 1) : null;
+		$new_name = '';
+		if ($last_name) {
+			$new_name = $last_name['user_name'] . sprintf("%03d", intval($last_name['last_num']) + 1);
+		} else {
+			$user_name = M("users")->where(array('user_id'=>$parent_id))->getField('user_name');
+			$new_name = $user_name . '001';
+		}
+		return $new_name;
 	}
 }
+
+/**
+ * update the last user name
+ * @param integer $user_id 
+ * @param string $user_name 
+ * @param integer $region_id
+ * @param integer $user_priv 
+ * @return void
+ */
+function update_last_username($user_id, $user_name, $region_id, $user_priv) {
+	$LastUsername = M('last_username');
+	$lu_id = $LastUsername->where(array('region_id'=>$region_id, 'user_priv'=>$user_priv))->getField('lu_id');
+	$data['user_id'] = $user_id;
+	$data['user_name'] = $user_name;
+	if ($lu_id) { // if record is exist, let $last_num add 1
+		$last_num = $LastUsername->where(array('lu_id'=>$lu_id))->getField('last_num');
+		$data['last_num'] = ++$last_num;
+		$LastUsername->where(array('lu_id'=>$lu_id))->save($data);
+	} else { // if record is not exist, add new record.
+		$data['last_num'] = 1;
+		$data['region_id'] = $region_id;
+		$data['user_priv'] = $user_priv;
+		$LastUsername->add($data);
+	}
+}
+
+/**
+ * get agent province id
+ * @param integer $user_id
+ * @return integer
+ */
+function get_agent_province($user_id) {
+	if ($user_id) {
+		$User = M('users');
+		$UserAdress = M('user_address');
+		$user_priv = $User->where(array('user_id'=>$user_id))->getField('user_priv');
+		if ($user_priv == C('AGENTS')) {
+			return $UserAdress->where(array('user_id'=>$user_id))->getField('province');
+		} elseif ($user_priv == C('FRANCHISE')) {
+			$parent_id = $User->where(array('user_id'=>$user_id))->getField('parent_id');
+			return $UserAdress->where(array('user_id'=>$parent_id))->getField('province');
+		} elseif ($user_priv == C('USERS')) {
+			$parent_id = $User->where(array('user_id'=>$user_id))->getField('parent_id');
+			$top_parent_id = $User->where(array('user_id'=>$parent_id))->getField('parent_id');
+			return $UserAdress->where(array('user_id'=>$top_parent_id))->getField('province');
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,5 +7,17 @@ common.css
 K 25
 svn:wc:ra_dav:version-url
 V 49
-/cdbelle/!svn/ver/2/Members/Public/Css/common.css
+/cdbelle/!svn/ver/7/Members/Public/Css/common.css
+END
+login2.css
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/cdbelle/!svn/ver/8/Members/Public/Css/login2.css
+END
+register.css
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/cdbelle/!svn/ver/8/Members/Public/Css/register.css
 END

@@ -15,7 +15,7 @@ class LoginAction extends Action {
 			header('Location: ' . C('WEB_ROOT'));
 			exit;
 		}
-		$this->display();
+		$this->display('index2');
 	}
 	
 	/**

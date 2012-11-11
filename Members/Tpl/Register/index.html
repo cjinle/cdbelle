@@ -1,40 +1,43 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>用户注册</title>
-<link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/common.css'>
-<style>
-		.reg{margin:100px auto;}
-		.reg ul li{margin:10px auto;font-size:22px;list-style:none;}
-		.reg ul li a{color:blue;}
-</style>
-</head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>会员登录</title>
+		<meta http-equiv=content-type content="text/html; charset=utf-8">
+		<link rel='stylesheet' type='text/css' href='__PUBLIC__/Css/login2.css'>
+		<style>
+			#register_link a{font-size:14px;}
+		</style>
+	</head>
+<body>
 
-<body class="right-bg">
-	
+<body>
 
-<div class="r-content" style="width:800px;margin:50px auto 0;">
-		<div class="r-content-title">用户注册</div>	
-		<div class="r-content-main">
-			<div style="color:blue;margin:5px;"><a href="__ROOT__/index.php?m=Login">&lt;&lt;返回登录页面</a></div>
-			
-			<div class="reg">
-				<ul>
-					<li><a href="/Members/index.php?m=Register&a=agentRegister" title="代理商注册">代理商注册&gt;&gt;</a></li>	
-					<li><a href="/Members/index.php?m=Register&a=franchiseRegister" title="加盟店注册">加盟店注册&gt;&gt;</a></li>	
-					<li><a href="/Members/index.php?m=Register&a=userRegister" title="会员注册">会员注册&gt;&gt;</a></li>	
-				</ul>
+<div style="width:100%;">
+	<div align="center">
+		<div id="main">
+			<div id="heading">
+				选择注册的类型 &nbsp;
+				<a href="__ROOT__/index.php?m=Login" title="返回登录页面">返回登录</a>
 			</div>
+			
+			<div style="line-height:1.8em;margin-top:10px;" id="register_link">
+            » <a href="/Members/index.php?m=Register&a=agentRegister" title="代理商注册">代理商注册&gt;&gt;</a>
+            <br>
+            » <a href="/Members/index.php?m=Register&a=franchiseRegister" title="加盟店注册">加盟店注册&gt;&gt;</a>
+			<br>
+			» <a href="/Members/index.php?m=Register&a=userRegister" title="会员注册">会员注册&gt;&gt;</a>
+            </div>
+            <div style="height:1px;display:block;clear:both;"></div>
+			<div style="text-align:center;margin-top:20px;">
+				<input type="button" name="" value="返　回" class="Button" onclick="javascript:history.go(-1)" />
+			</div>
+		</div><!--// #main-->
+	</div>
 
+	
+</div>
 
-		</div><!--// .r-content-main-->
-		
-		
-	</div><!--// .r-content-->
-
-
-	<div class="copyright">&copy; Copyright 2010 Your Company </div>
 </body>
+
 </html>
