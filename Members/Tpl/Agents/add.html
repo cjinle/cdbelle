@@ -5,34 +5,9 @@
 		<div class="r-content-title">代理商添加</div>	
 		<div class="r-content-main">
 			<form action="__ROOT__/index.php?m=Agents&a=insert" method="POST">
-			<table width="700" border="0" cellpadding="5" cellspacing="5" style="margin:20px 0 20px 50px;">
+			<table width="730" border="0" cellpadding="5" cellspacing="5" style="margin:20px 0 20px 50px;">
 				<tr>
-					<td align="right"><span class="mark">*</span>用户名：</td>
-					<td>
-						<input type="text" name="user_name" id="user_name" value="" /> 
-						<a href="javascript:void(0)" id="check_user_name">检测用户名</a> 
-						<img src="__PUBLIC__/Images/loading2.gif" id="loading_icon" style="display:none;" /> 
-						<span class="alert_msg" style="display:none;margin:0 5px;color:red;"></span>
-					</td>	
-				</tr>
-				<tr>
-					<td align="right"><span class="mark">*</span>代理商名：</td>	
-					<td><input type="text" name="real_name" value="" /></td>
-				</tr>
-				<tr>
-					<td align="right"><span class="mark">*</span>邮件：</td>
-					<td><input type="text" name="email" value="" /></td>	
-				</tr>
-				<tr>
-					<td align="right">QQ：</td>	
-					<td><input type="text" name="qq" value="" /></td>
-				</tr>
-				<tr>
-					<td align="right">联系电话：</td>	
-					<td><input type="text" name="mobile_phone" value="" /></td>
-				</tr>
-				<tr>
-					<td align="right">地区：</td>
+					<td align="right"><span class="mark">*</span>地区：</td>
 					<td>
 						<select name="province" id="province">
 							<option value="0">请选择</option>
@@ -45,20 +20,56 @@
 						</select> 
 						<select name="district" id="district">
 							<option value="0">请选择</option>
-						</select>	
+						</select>&nbsp;
+						<span id="Required_Province" style="color:red;visibility:hidden;">请选择代理商所在地区</span>
 					</td>
 				</tr>
+				<tr>
+					<td align="right"><span class="mark">*</span>用户名：</td>
+					<td>
+						<input type="text" name="user_name" id="user_name" class="readonly" value="" readonly="readonly" />&nbsp;
+						<span id="Required_UserName" style="color:red;visibility:visible">用户名在选择地区时自动生成</span>
+					</td>	
+				</tr>
+				<tr>
+					<td align="right"><span class="mark">*</span>代理商名称：</td>	
+					<td>
+					    <input type="text" name="real_name" value="" />&nbsp;
+					    <span id="Required_RealName" style="color:red;visibility:hidden;">代理商名称不能为空</span>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">邮件：</td>
+					<td>
+						<input type="text" name="email" value="" />
+					</td>	
+				</tr>
+				<tr>
+					<td align="right">QQ：</td>	
+					<td><input type="text" name="qq" value="" /></td>
+				</tr>
+				<tr>
+					<td align="right">联系电话：</td>	
+					<td><input type="text" name="mobile_phone" value="" /></td>
+				</tr>
+				
 				<tr>
 					<td align="right">地址：</td>
 					<td><input type="text" name="address" value="" /></td>
 				</tr>
 				<tr>
 					<td align="right"><span class="mark">*</span>密码：</td>	
-					<td><input type="password" name="new_pwd" value="" /></td>
+					<td>
+						<input type="password" name="new_pwd" value="" />&nbsp;
+						<span id="Required_NewPwd" style="color: red;visibility: hidden;">密码不能少于6位</span>
+					</td>
 				</tr>
 				<tr>
 					<td align="right"><span class="mark">*</span>确认密码：</td>	
-					<td><input type="password" name="confirm_new_pwd" value="" /></td>
+					<td>
+						<input type="password" name="confirm_new_pwd" value="" />&nbsp;
+						<span id="Required_ConfirmNewPwd" style="color: red;visibility: hidden;">密码与确认密码不一致</span>
+					</td>
 				</tr>
 				<tr>
 					<td align="right">
@@ -109,22 +120,30 @@ $(document).ready(function(){
 		var msg = '';
 		var pwd = $("input[name='new_pwd']").val();
 		if ($("input[name='user_name']").val() == "") {
-			msg += "用户不能为空\n";
+			$("#Required_UserName").html("请选择代理商所在地区");
+			$("#Required_UserName").css("visibility", "visible");
+			$("#Required_Province").css("visibility", "visible");
+		} else {
+			$("#Required_UserName").css("visibility", "hidden");
+			$("#Required_Province").css("visibility", "hidden");
 		}
 		if ($("input[name='real_name']").val() == "") {
-			msg += "代理商名不能为空\n";
-		}
-		if ($("input[name='email']").val() == "") {
-			msg += "邮件不能为空\n";
+			$("#Required_RealName").css("visibility", "visible");
+		} else {
+			$("#Required_RealName").css("visibility", "hidden");
 		}
 		if (pwd.length < 6) {
-			msg += "密码不能少于6位\n";
+			$("#Required_NewPwd").css("visibility", "visible");
+		} else {
+			$("#Required_NewPwd").css("visibility", "hidden");
 		}
 		if ($("input[name='new_pwd']").val() != $("input[name='confirm_new_pwd']").val()) {
-			msg += "密码与确认密码不一致\n";
+			$("#Required_ConfirmNewPwd").css("visibility", "visible");
+		} else {
+			$("#Required_ConfirmNewPwd").css("visibility", "hidden");
 		}
-		if (msg != "") {
-			alert(msg);
+		if (($("input[name='user_name']").val() == "")||($("input[name='real_name']").val() == "")||
+			(pwd.length < 6)||($("input[name='new_pwd']").val() != $("input[name='confirm_new_pwd']").val())) {
 			return false;
 		}
 		
@@ -135,6 +154,13 @@ $(document).ready(function(){
 			'region_type=2&parent_id=' + this.value,
 			function(data){
 				$("#city").html(data);	
+			}
+		);
+		$.get(
+			'__ROOT__/index.php?m=Ajax&a=create_agent_username',
+			'user_priv=2&region_id=' + this.value,
+			function(data){
+				$("input#user_name").val(data);		
 			}
 		);
 	});

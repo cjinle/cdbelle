@@ -65,8 +65,11 @@ class UsersAction extends InitAction {
 	 */
 	public function add() {
 		if (session('user_priv') == C('ADMIN')) { // 超级管理员可以选择代理商
-			$franchise_list = M('users')->field('user_id,user_name,real_name')->where(array('user_priv'=>C('FRANCHISE')))->select();
+			$franchise_list = M('users')->field('user_id,user_name,real_name')->where(array('user_priv'=>C('FRANCHISE')))->order("user_name ASC")->select();
 			$this->assign('franchise_list', $franchise_list);
+		} else {
+			$users_name = get_next_username(session('user_id'), C('USERS'));
+			$this->assign('users_name', $users_name);
 		}
 		$this->assign('province_list', get_region(1, 1));
 		$this->display();
@@ -102,6 +105,8 @@ class UsersAction extends InitAction {
 				$data['salt'] = strval($salt);
 				$data['qq'] = addslashes(trim($_POST['qq']));
 				$data['mobile_phone'] = addslashes(trim($_POST['mobile_phone']));
+				$data['birthday'] = trim($_POST['birthday']);
+				$data['birthday_month'] = date('m', strtotime($data['birthday']));
 				if ((session('user_priv') == C('ADMIN') || (session('user_priv') == C('AGENTS'))) && 
 					(isset($_POST['franchise']))) {
 					$data['parent_id'] = intval($_POST['franchise']); 
@@ -109,6 +114,8 @@ class UsersAction extends InitAction {
 					$data['parent_id'] = session('user_id');
 				}
 				$new_user_id = $User->add($data);
+				$parent_name = $User->where(array('user_id'=>$data['parent_id']))->getField('user_name');
+				update_last_username($data['parent_id'], $parent_name, get_agent_province($new_user_id), C('USERS'));
 //				echo $User->getLastSQL();exit;
 				if ($new_user_id) { // 新代理商生成成功
 					$address_data['user_id'] = $new_user_id;
@@ -160,6 +167,8 @@ class UsersAction extends InitAction {
 				$franchise_list = M('users')->field('user_id,user_name,real_name')->where(array('user_priv'=>C('FRANCHISE'), 'parent_id'=>session('user_id')))->select();
 				$this->assign('franchise_list', $franchise_list);
 			}
+			$franchise_info = M('users')->field('user_name,real_name')->where(array('user_id'=>$user_info['parent_id']))->find();
+			$user_info['franchise_info'] = $franchise_info;
 			$user_address = get_user_address($user_id);
 			$this->assign('province_list', get_region(1, 1));	
 			$this->assign('city_list', get_region($user_address['province_id'], 2));
@@ -210,6 +219,8 @@ class UsersAction extends InitAction {
 			$data['real_name'] = addslashes(trim($_POST['real_name']));
 			$data['qq'] = addslashes(trim($_POST['qq']));
 			$data['mobile_phone'] = addslashes(trim($_POST['mobile_phone']));
+			$data['birthday'] = trim($_POST['birthday']);
+			$data['birthday_month'] = date('m', strtotime($data['birthday']));
 			// 密码
 			$new_pwd = $_POST['new_pwd'];
 			$confirm_new_pwd = $_POST['confirm_new_pwd'];

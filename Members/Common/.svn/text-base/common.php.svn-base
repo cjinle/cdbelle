@@ -266,6 +266,8 @@ function get_next_username($parent_id, $user_priv) {
 	if ($parent_id && $user_priv) {
 		$where['user_id&user_priv'] = array($parent_id, $user_priv, '_multi'=>true);
 		$last_name = M('last_username')->where($where)->field('user_name,last_num')->find();
+//		echo M('last_username')->getLastSQL();
+//		var_dump($last_name);
 		$new_name = '';
 		if ($last_name) {
 			$new_name = $last_name['user_name'] . sprintf("%03d", intval($last_name['last_num']) + 1);

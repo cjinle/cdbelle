@@ -38,17 +38,22 @@
 					<td align="right">角色：</td>	
 					<td>{$user_info.user_priv}</td>
 				</tr>
-				<?php if ($agents_list) : ?>
+				<?php if (FALSE && $agents_list) : ?>
 				<tr>
 					<td align="right">所属代理商：</td>	
 					<td>
 						<select name="agents">
 							<option value="0">未选择代理商</option>
 							<foreach name="agents_list" item="item">
-							<option value="{$item.user_id}" <?php if ($user_info['parent_id'] == $item['user_id']) { echo 'selected';} ?>>{$item.real_name} - {$item.user_name}</option>
+							<option value="{$item.user_id}" <?php if ($user_info['parent_id'] == $item['user_id']) { echo 'selected';} ?>>{$item.user_name} - {$item.real_name}</option>
 							</foreach>
 						</select>	
 					</td>
+				</tr>
+				<?php else : ?>
+				<tr>
+					<td align="right">所属代理商：</td>	
+					<td><?php echo $user_info['parent_info']['user_name'] . ' - ' . $user_info['parent_info']['real_name']; ?></td>
 				</tr>
 				<?php endif; ?>
 				<tr>

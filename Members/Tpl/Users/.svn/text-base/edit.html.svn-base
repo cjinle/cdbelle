@@ -51,7 +51,15 @@
 						<?php endif; ?>
 					</td>	
 				</tr>
-				<?php if ($franchise_list) : ?>
+				<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/My97DatePicker/WdatePicker.js"></script>
+				<tr>
+					<td align="right">出生日期：</td>	
+					<td>
+						<input type="text" name="birthday" value="<?php echo $user_info['birthday']; ?>" onclick="WdatePicker()" style="background: white url(/Members/Public/Images/datePicker.gif) no-repeat right" />&nbsp;
+						<span style="color:green;visibility:visible;">填写真实生日会有神秘礼物</span>
+					</td>
+				</tr>
+				<?php if (FALSE && $franchise_list) : ?>
 				<tr>
 					<td align="right">所属加盟店：</td>	
 					<td>
@@ -62,6 +70,11 @@
 							</foreach>
 						</select>	
 					</td>
+				</tr>
+				<?php else : ?>
+				<tr>
+					<td align="right">所属加盟店：</td>	
+					<td><?php echo $user_info['franchise_info']['user_name'] . ' - ' . $user_info['franchise_info']['real_name']; ?></td>
 				</tr>
 				<?php endif; ?>
 				<tr>

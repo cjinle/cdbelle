@@ -82,6 +82,7 @@ class AgentsAction extends InitAction {
 				$data['qq'] = addslashes(trim($_POST['qq']));
 				$data['mobile_phone'] = addslashes(trim($_POST['mobile_phone']));
 				$new_user_id = $User->add($data);
+				update_last_username($new_user_id, $data['user_name'], intval($_POST['province']), C('AGENTS'));
 //				echo $User->getLastSQL();exit;
 				if ($new_user_id) { // 新代理商生成成功
 					$address_data['user_id'] = $new_user_id;

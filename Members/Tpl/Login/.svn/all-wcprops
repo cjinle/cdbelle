@@ -1,11 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
-V 37
-/cdbelle/!svn/ver/2/Members/Tpl/Login
+V 38
+/cdbelle/!svn/ver/11/Members/Tpl/Login
 END
 index.html
 K 25
 svn:wc:ra_dav:version-url
 V 48
 /cdbelle/!svn/ver/2/Members/Tpl/Login/index.html
+END
+index2.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/cdbelle/!svn/ver/11/Members/Tpl/Login/index2.html
 END

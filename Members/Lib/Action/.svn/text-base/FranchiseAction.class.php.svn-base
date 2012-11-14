@@ -52,8 +52,11 @@ class FranchiseAction extends IndexAction {
 	 */
 	public function add() {
 		if (session('user_priv') == C('ADMIN')) { // 超级管理员可以选择代理商
-			$agents_list = M('users')->field('user_id,user_name,real_name')->where(array('user_priv'=>C('AGENTS')))->select();
+			$agents_list = M('users')->field('user_id,user_name,real_name')->where(array('user_priv'=>C('AGENTS')))->order("user_name ASC")->select();
 			$this->assign('agents_list', $agents_list);
+		} else {
+			$franchise_name = get_next_username(session('user_id'), C('FRANCHISE'));
+			$this->assign('franchise_name', $franchise_name);
 		}
 		$this->assign('province_list', get_region(1, 1));
 		$this->display();
@@ -95,6 +98,8 @@ class FranchiseAction extends IndexAction {
 					$data['parent_id'] = session('user_id');
 				}
 				$new_user_id = $User->add($data);
+				$parent_name = $User->where(array('user_id'=>$data['parent_id']))->getField('user_name');
+				update_last_username($data['parent_id'], $parent_name, get_agent_province($new_user_id), C('FRANCHISE'));
 //				echo $User->getLastSQL();exit;
 				if ($new_user_id) { // 新代理商生成成功
 					$address_data['user_id'] = $new_user_id;
@@ -129,6 +134,8 @@ class FranchiseAction extends IndexAction {
 				$agents_list = M('users')->field('user_id,user_name,real_name')->where(array('user_priv'=>C('AGENTS')))->select();
 				$this->assign('agents_list', $agents_list);
 			}
+			$parent_info = M('users')->field('user_name,real_name')->where(array('user_id'=>$user_info['parent_id']))->find();
+			$user_info['parent_info'] = $parent_info;
 			$user_address = get_user_address($user_id);
 			$this->assign('province_list', get_region(1, 1));	
 			$this->assign('city_list', get_region($user_address['province_id'], 2));

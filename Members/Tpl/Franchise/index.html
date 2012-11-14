@@ -22,13 +22,16 @@
               <tr>
                 <th width="7%">用户ID</th>
                 <th>用户名</th>
-                <th>加盟店名</th>
-                <th>代理商名</th>
+                <th>加盟店名称</th>
+                <th>代理商名称</th>
                 <th>联系电话</th>
                 <th>地区</th>
                 <th>会员数</th>
                 <th>状态</th>
+                <?php if (user_priv('franchise_edit', 0)) : ?>
                 <th>操作</th>
+                <?php endif; ?>
+                <!--权限控制-->
               </tr>
             </thead>
             
@@ -43,11 +46,14 @@
                 <td align="center">{$item.region}</td>
                 <td align="center"><a href="__ROOT__/index.php?m=Users&a=index&parent_id={$item.user_id}">{$item.users}</a></td>
                 <td align="center">{$item.status}</td>
-                
+                <?php if (user_priv('franchise_edit', 0)) : ?>
                 <td align="center">
                   <!-- Icons -->
                   <img src="__PUBLIC__/Images/edit.gif" /><a href="__ROOT__/index.php?m=Franchise&a=edit&user_id={$item.user_id}" title="编辑">编辑</a>&nbsp;
-                  <img src="__PUBLIC__/Images/locked.gif" /><a href="__ROOT__/index.php?m=Franchise&a=locked&user_id={$item.user_id}" class="lock" title="锁定">锁定</a> </td>
+                  <img src="__PUBLIC__/Images/locked.gif" /><a href="__ROOT__/index.php?m=Franchise&a=locked&user_id={$item.user_id}" class="lock" title="锁定">锁定</a> 
+                </td>
+                <?php endif; ?>
+                <!--权限控制-->
               </tr>
             </foreach>
 
