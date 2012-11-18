@@ -7,13 +7,13 @@ edit.html
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/cdbelle/!svn/ver/12/Members/Tpl/Users/edit.html
+/cdbelle/!svn/ver/14/Members/Tpl/Users/edit.html
 END
 index.html
 K 25
 svn:wc:ra_dav:version-url
 V 49
-/cdbelle/!svn/ver/12/Members/Tpl/Users/index.html
+/cdbelle/!svn/ver/14/Members/Tpl/Users/index.html
 END
 add.html
 K 25
@@ -24,8 +24,8 @@ END
 userInfo.html
 K 25
 svn:wc:ra_dav:version-url
-V 51
-/cdbelle/!svn/ver/2/Members/Tpl/Users/userInfo.html
+V 52
+/cdbelle/!svn/ver/14/Members/Tpl/Users/userInfo.html
 END
 view.html
 K 25

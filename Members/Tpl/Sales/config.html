@@ -25,8 +25,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td align="right"><input type="submit" value="提交" /></td>	
-						<td><input type="button" value="返回" onclick="javscript:history.go(-1)" /></td>
+						<td align="right"></td>	
+						<td><input type="submit" value="提交" /></td>
 					</tr>
 				</table>
 				
@@ -39,26 +39,26 @@
 <script src="__PUBLIC__/Js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-//	$('form').submit(function(){
-//		var to_agents = $("input[name='to_agents']").val();
-//		var to_franchise = $("input[name='to_franchise']").val();
-//		if ((to_agents<1)&&(to_agents>=0)) {
-//			$("#to_agents_alert").css("visibility", "hidden");	
-//		} else {
-//			$("#to_agents_alert").css("visibility", "visible");
-//			return false;
-//		}
-//		if ((to_franchise<1)&&(to_franchise>=0)) {
-//			$("#to_franchise_alert").css("visibility", "hidden");
-//		} else {
-//			$("#to_franchise_alert").css("visibility", "visible");
-//			return false;	
-//		}	
-//		if (parseFloat(to_agents)+parseFloat(to_franchise)>1) {
-//			alert("加起来的返点已经超过1");
-//			return false;
-//		}
-//	});
+	$('form').submit(function(){
+		var to_agents = $("input[name='to_agents']").val();
+		var to_franchise = $("input[name='to_franchise']").val();
+		if ((to_agents<1)&&(to_agents>=0)) {
+			$("#to_agents_alert").css("visibility", "hidden");	
+		} else {
+			$("#to_agents_alert").css("visibility", "visible");
+			return false;
+		}
+		if ((to_franchise<1)&&(to_franchise>=0)) {
+			$("#to_franchise_alert").css("visibility", "hidden");
+		} else {
+			$("#to_franchise_alert").css("visibility", "visible");
+			return false;	
+		}	
+		if (parseFloat(to_agents)+parseFloat(to_franchise)>1) {
+			alert("加起来的返点已经超过1");
+			return false;
+		}
+	});
 });
 </script>
 

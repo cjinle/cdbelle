@@ -219,6 +219,7 @@ class UsersAction extends InitAction {
 			$data['real_name'] = addslashes(trim($_POST['real_name']));
 			$data['qq'] = addslashes(trim($_POST['qq']));
 			$data['mobile_phone'] = addslashes(trim($_POST['mobile_phone']));
+            $data['taobao_name'] = $this->check_taobao_name($user_id, $_POST['taobao_name']);
 			$data['birthday'] = trim($_POST['birthday']);
 			$data['birthday_month'] = date('m', strtotime($data['birthday']));
 			// 密码
@@ -374,5 +375,27 @@ class UsersAction extends InitAction {
 			return M('user_priv')->where(array('up_id'=>$up_id))->getField('priv_name');
 		}
 	}
-	
+
+    /**
+     * 检测是否有淘宝账号已绑定
+     * @param integer $user_id
+     * @parem string $taobao_name
+     * @param object $obj
+     * @return mixed
+     */
+    private function check_taobao_name($user_id, $taobao_name) {
+        $return_val = "";
+        if (!empty($taobao_name)) {
+            $uid = M("users")->where(array("taobao_name"=>$taobao_name))->getField("taobao_name");
+            if ($uid && ($uid != $user_id)) {
+                $this->error("此天猫账号已经绑定到其它会员！");
+            } else {
+                $return_val = addslashes($taobao_name);
+            }
+        }
+        return $return_val;
+    }
+
+
+
 }

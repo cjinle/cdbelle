@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'ts_id', 1 => 'upload_id', 2 => 'order_sn', 3 => 'taobao_name', 4 => 'alipay', 5 => 'goods_fee', 6 => 'shipping_fee', 7 => 'pay_point', 8 => 'total_fee', 9 => 'rebate_point', 10 => 'paid_fee', 11 => 'paid_point', 12 => 'order_status', 13 => 'buyer_msg', 14 => 'buyer_name', 15 => 'address', 16 => 'shipping_type', 17 => 'phone', 18 => 'cellphone', 19 => 'create_time', 20 => 'paid_time', 21 => 'goods_name', 22 => 'close_reason', 23 => 'rebate_status', '_autoinc' => true, '_pk' => 'ts_id', ); ?>

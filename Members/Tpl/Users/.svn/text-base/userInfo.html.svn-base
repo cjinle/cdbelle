@@ -7,10 +7,6 @@
 			<form action="__ROOT__/index.php?m=Users&a=updateUserInfo" method="POST">
 			<table width="700" border="0" cellpadding="5" cellspacing="5" style="margin:20px 0 20px 50px;">
 				<tr>
-					<td align="right">会员ID：</td>
-					<td>{$user_info.user_id}</td>	
-				</tr>
-				<tr>
 					<td align="right">用户名：</td>
 					<td>{$user_info.user_name}</td>	
 				</tr>
@@ -38,6 +34,12 @@
 					<td align="right">角色：</td>	
 					<td>{$user_info.user_priv}</td>
 				</tr>
+				<?php if ((session('user_priv') == C('FRANCHISE'))||(session('user_priv') == C('AGENTS'))) : ?>
+				<tr>
+					<td align="right">我的返点：</td>
+					<td>{$user_info.rebate}</td>	
+				</tr>
+				<?php endif; ?>
 				<?php if (session('user_priv') == C('USERS')) : ?>
 				<tr>
 					<td align="right">绑定卡号：</td>

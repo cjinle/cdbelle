@@ -27,6 +27,7 @@
                 <th>联系电话</th>
                 <th>地区</th>
                 <th>会员数</th>
+                <th>返点</th>
                 <th>状态</th>
                 <?php if (user_priv('franchise_edit', 0)) : ?>
                 <th>操作</th>
@@ -45,6 +46,7 @@
                 <td align="center">{$item.mobile_phone}</td>
                 <td align="center">{$item.region}</td>
                 <td align="center"><a href="__ROOT__/index.php?m=Users&a=index&parent_id={$item.user_id}">{$item.users}</a></td>
+                <td align="center">{$item.rebate}</td>
                 <td align="center">{$item.status}</td>
                 <?php if (user_priv('franchise_edit', 0)) : ?>
                 <td align="center">

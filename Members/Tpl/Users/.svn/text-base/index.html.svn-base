@@ -29,6 +29,7 @@
                 <th width="7%">用户ID</th>
                 <th>用户名</th>
                 <th>用户姓名</th>
+                <th>天猫帐号</th>
                 <th>加盟店名称</th>
                 <?php if (user_priv('users_contact', 0)) : ?>
                 <th>联系电话</th>
@@ -47,6 +48,7 @@
                 <td align="center">{$item.user_id}</td>
                 <td align="center">{$item.user_name}</td>
                 <td align="center">{$item.real_name}</td>
+                <td align="center">{$item.taobao_name}</td>
                 <td align="center">{$item.franchise}</td>
                 <?php if (user_priv('users_contact', 0)) : ?>
                 <td align="center">{$item.mobile_phone}</td>

@@ -3,3 +3,15 @@ svn:wc:ra_dav:version-url
 V 37
 /cdbelle/!svn/ver/2/Members/Lib/Model
 END
+UploadModel.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/cdbelle/!svn/ver/15/Members/Lib/Model/UploadModel.class.php
+END
+SalesModel.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/cdbelle/!svn/ver/14/Members/Lib/Model/SalesModel.class.php
+END

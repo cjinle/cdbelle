@@ -9,6 +9,12 @@ svn:wc:ra_dav:version-url
 V 60
 /cdbelle/!svn/ver/2/Members/Lib/Action/IndexAction.class.php
 END
+SalesAction.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/cdbelle/!svn/ver/14/Members/Lib/Action/SalesAction.class.php
+END
 LoginAction.class.php
 K 25
 svn:wc:ra_dav:version-url
@@ -49,7 +55,7 @@ UsersAction.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/cdbelle/!svn/ver/12/Members/Lib/Action/UsersAction.class.php
+/cdbelle/!svn/ver/14/Members/Lib/Action/UsersAction.class.php
 END
 FranchiseAction.class.php
 K 25

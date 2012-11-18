@@ -5,6 +5,7 @@
  * @author Lok 2012/11/12
  */
 class SalesAction extends InitAction {
+
 	/**
 	 * 首页
 	 */
@@ -48,6 +49,18 @@ class SalesAction extends InitAction {
 	 * 上传天猫数据
 	 */
 	public function upload() {
+        $upload_file = M('upload_files')->order("upload_id DESC")->select();
+        foreach ($upload_file as $key => $val) {
+            $upload_file[$key]['upload_time'] = date("Y-m-d H:i:s", $val['upload_time']);
+            if (0 == $val['status']) {
+                $upload_file[$key]['status_msg'] = "<span style='color:orange'>未入库</span>";
+            } elseif (1 == $val['status']) {
+                $upload_file[$key]['status_msg'] = "<span style='color:green'>已入库</span>";
+            } elseif (2 == $val['status']) {
+                $upload_file[$key]['status_msg'] = "<span style='color:red'>已取消</span>";
+            }
+        }
+        $this->assign('upload_file', $upload_file);
 		$this->display();
 	}
 	
@@ -55,8 +68,84 @@ class SalesAction extends InitAction {
 	 * 处理上传的天猫数据
 	 */
 	public function doUpload() {
-		
+        $UploadModel = D("Upload");
+        $result = $UploadModel->uploadSalesFile();
+        if (!$result['flg']) { // 上传失败
+            $this->error($result['msg']);
+        } else {
+            $this->success($result['msg']);
+        }
+		exit;
 	}
+
+    /**
+     * 删除上传文件
+     */
+    public function delUploadFile() {
+        $upload_id = intval($_GET['id']);
+        user_priv('system_manage'); // 权限检测
+        if ($upload_id) {
+            $SalesModel = D('Sales');
+            if ($SalesModel->delUploadFile($upload_id)) {
+                $this->success("删除文件成功");
+            } else {
+                $this->error("删除文件失败");
+            }
+        }
+    }
+
+    /**
+     * 文件数据入库
+     */
+    public function insert() {
+        $upload_id = intval($_GET['id']);
+        user_priv('system_manage'); // 权限检测
+        if ($upload_id) {
+            $SalesModel = D('Sales');
+            if ($SalesModel->insertDb($upload_id)) {
+                $url = C('WEB_ROOT') . '/index.php?m=Sales&a=history';
+                $this->success("文件入库成功", $url);
+            } else {
+                $this->error("文件状态不对，入库失败");
+            }
+        }
+    }
+
+    /**
+	 * 历史天猫数据
+	 */
+	public function history() {
+        $TaobaoSales = M('taobao_sales');
+        $list_rows = C('LIST_ROWS');
+        !isset($_GET['p']) ? $_GET['p'] = 1 : null;
+        $where = array();
+        if (isset($_GET['upload_id'])) {
+            $where['upload_id'] = intval($_GET['upload_id']);
+        }
+        if (isset($_GET['rebate_status']) && $_GET['rebate_status'] != 99) {
+            $where['rebate_status'] = intval($_GET['rebate_status']);
+        }
+        if (!empty($_GET['order_sn'])) {
+            $order_sn = trim($_GET['order_sn']);
+            $where['_string'] = " (order_sn like '%{$order_sn}%') ";
+        }
+
+        $sales_list = $TaobaoSales->where($where)->page($_GET['p'] . ',' . $list_rows)->order("upload_id DESC")->select();
+        foreach ($sales_list as $key => $val) {
+            $sales_list[$key]['rebate_status_msg'] = $val['rebate_status'] ? '<span style="color:red;">已返点</span>' :
+                                                               '<span style="color:green;">未返点</span>';
+            $sales_list[$key]['user_name'] = get_username_by_taobaoname($val['taobao_name']);
+        }
+
+        import("ORG.Util.Page");
+        $count = $TaobaoSales->where($where)->count();
+        $Page = new Page($count, $list_rows);
+        $this->assign('page', $Page->show());
+        $this->assign('sales_list', $sales_list);
+		$this->display();
+	}
+
+
 }
 
 

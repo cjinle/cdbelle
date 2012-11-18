@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'log_id', 1 => 'rebate', 2 => 'rebate_rate', 3 => 'user_id', 4 => 'rebate_id', 5 => 'rebate_user_priv', 6 => 'upload_id', 7 => 'order_sn', 8 => 'paid_fee', 9 => 'log_type', 10 => 'rebate_time', 11 => 'remark', '_autoinc' => true, '_pk' => 'log_id', ); ?>

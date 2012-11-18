@@ -141,6 +141,18 @@ function get_user_name($user_id) {
 }
 
 /**
+ * get user name by taobao name
+ * @param string $taobao_name
+ * @return string
+ */
+function get_username_by_taobaoname($taobao_name = "") {
+    if (!empty($taobao_name)) {
+        return M('users')->where(array('taobao_name'=>$taobao_name))->getField('user_name');
+    }
+}
+
+
+/**
  * privilege check
  * @param string $code
  * @param integer $return_type
