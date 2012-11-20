@@ -176,6 +176,33 @@ class SalesModel extends Model {
     }
 
     /**
+     * 返点清零
+     * @return void
+     */
+    public function rebateClear() {
+        $Users = M('uesrs');
+        $now = time();
+        $where = " rebate > 0 AND user_priv IN (" . C('AGENTS') . ", " . C('FRANCHISE') . ") ";
+        $rebate_user = $Users->where($where)->filed('user_id,parent_id,user_priv,rebate')->select();
+        foreach ($rebate_user as $key => $val) {
+            $rebate = $val['rebate'] * (-1);
+            $rebate_log['rebate'] = $rebate;
+            $rebate_log['rebate_rate'] = 0;
+            $rebate_log['user_id'] = $val['parent_id'];
+            $rebate_log['rebate_id'] = $val['user_id'];
+            $rebate_log['rebate_user_priv'] = $val['user_priv'];
+            $rebate_log['upload_id'] = 0;
+            $rebate_log['order_sn'] = 0;
+            $rebate_log['paid_fee'] = 0;
+            $rebate_log['log_type'] = 1;
+            $rebate_log['rebate_time'] = $now;
+            $rebate_log['remark'] = "年底清空{$rebate}返点";
+            $this->rebateLog($rebate_log);
+            $Users->where(array('uesr_id'=>$val['user_id']))->save(array('rebate'=>0));
+        }
+    }
+
+    /**
      * 返点日志
      * @param array $log
      * @return void

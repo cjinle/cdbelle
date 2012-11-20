@@ -104,7 +104,12 @@ class RegisterAction extends Action {
 			$count = $User->where(array('user_name'=>$user_name))->count();
 			if (!$count) {
 				$data['user_name'] = $user_name;
-				$data['real_name'] = addslashes(trim($_POST['real_name']));
+                if (check_real_name_is_available($_POST['real_name'])) {
+                    $data['real_name'] = addslashes(trim($_POST['real_name']));
+                } else {
+                    $this->error("用户名已存在");
+                }
+                $data['company'] = addslashes($_POST['company']);
 				$data['email'] = is_email($_POST['email']) ? addslashes(trim($_POST['email'])) : '';
 				/* 密码 */
 				$new_pwd = $_POST['new_pwd'];

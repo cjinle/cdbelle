@@ -37,8 +37,17 @@ class AjaxAction extends Action {
 		$count = M('users')->where(array('user_name'=>$user_name))->count();
 		die($count);
 	}
-	
-	/**
+
+    /**
+     * 检测真名是否可用
+     */
+    public function check_real_name() {
+        $real_name = addslashes(trim($_GET['real_name']));
+        $count = M('users')->where(array('real_name'=>$real_name))->count();
+        die($count);
+    }
+
+    /**
 	 * 检测卡号是否可用
 	 */
 	public function check_card_no() {

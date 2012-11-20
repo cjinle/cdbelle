@@ -20,54 +20,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SalesAction.class.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Members/Lib/Action/SalesAction.class.php">
+      <file leaf-file-name="SalesModel.class.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Members/Lib/Model/SalesModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="72" selection-start="3955" selection-end="3955" vertical-scroll-proportion="1.6234888">
-              <folding>
-                <marker date="1353254096593" expanded="true" signature="1469:1481" placeholder="..." />
-                <marker date="1353254096593" expanded="false" signature="1606:1617" placeholder="..." />
-                <marker date="1353254096593" expanded="false" signature="1742:1751" placeholder="..." />
-                <marker date="1353254096593" expanded="true" signature="3974:3984" placeholder="..." />
-                <marker date="1353254096593" expanded="true" signature="4077:4089" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersAction.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Members/Lib/Action/UsersAction.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="12" selection-start="372" selection-end="393" vertical-scroll-proportion="-6.785714">
-              <folding>
-                <marker date="1353178327937" expanded="false" signature="1797:1807" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="1836:1848" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="5268:5278" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="5372:5382" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="6127:6137" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="6166:6178" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="10417:10427" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="10456:10468" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="11155:11165" placeholder="..." />
-                <marker date="1353178327937" expanded="false" signature="11194:11206" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Members/Conf/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="35" selection-start="158" selection-end="158" vertical-scroll-proportion="-4.071429">
+            <state line="200" column="59" selection-start="8127" selection-end="8127" vertical-scroll-proportion="-0.04796163">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalesModel.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Members/Lib/Model/SalesModel.class.php">
+      <file leaf-file-name="RegisterAction.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Members/Lib/Action/RegisterAction.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="56" selection-start="5724" selection-end="5724" vertical-scroll-proportion="-100.42857">
+            <state line="157" column="7" selection-start="5815" selection-end="5815" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -76,7 +41,7 @@
       <file leaf-file-name="LoginAction.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Members/Lib/Action/LoginAction.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="7" selection-start="149" selection-end="149" vertical-scroll-proportion="6.535714">
+            <state line="28" column="59" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -85,10 +50,19 @@
       <file leaf-file-name="common.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Members/Common/common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="35" selection-start="3641" selection-end="3667" vertical-scroll-proportion="-16.285715">
+            <state line="245" column="29" selection-start="6224" selection-end="6224" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1353253926921" expanded="false" signature="4180:4304" placeholder="..." />
+                <marker date="1353413431937" expanded="false" signature="4180:4304" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjaxAction.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Members/Lib/Action/AjaxAction.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="39" selection-start="909" selection-end="909" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,18 +80,21 @@
         <option value="$PROJECT_DIR$/Members/Lib/Action/UsersAction.class.php" />
         <option value="$PROJECT_DIR$/Members/Lib/Model/salsesModel.class.php" />
         <option value="$PROJECT_DIR$/Members/Lib/Model/uploadModel.class.php" />
-        <option value="$PROJECT_DIR$/Members/Common/common.php" />
         <option value="$PROJECT_DIR$/Members/Lib/Action/SalesAction.class.php" />
+        <option value="$PROJECT_DIR$/Members/Lib/Action/AjaxAction.class.php" />
+        <option value="$PROJECT_DIR$/Members/Common/common.php" />
+        <option value="$PROJECT_DIR$/Members/Lib/Action/RegisterAction.class.php" />
+        <option value="$PROJECT_DIR$/Members/Lib/Action/LoginAction.class.php" />
         <option value="$PROJECT_DIR$/Members/Lib/Model/SalesModel.class.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="207" />
-    <option name="y" value="14" />
-    <option name="width" value="1240" />
-    <option name="height" value="789" />
+    <option name="x" value="121" />
+    <option name="y" value="116" />
+    <option name="width" value="1036" />
+    <option name="height" value="633" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -133,7 +110,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -144,189 +121,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Extend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPHP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Extend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Action" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Conf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cdbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Members" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -351,19 +146,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="207" y="14" width="1240" height="789" extended-state="0" />
-    <editor active="false" />
+    <frame x="121" y="116" width="1036" height="633" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.193086" sideWeight="0.507109" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.193086" sideWeight="0.48183253" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25151515" sideWeight="0.51890033" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25151515" sideWeight="0.46907216" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.193086" sideWeight="0.5007899" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19242424" sideWeight="0.5007899" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -426,13 +221,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/InitAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Members/Lib/Action/LoginAction.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="34" selection-start="993" selection-end="1002" vertical-scroll-proportion="0.0">
@@ -442,118 +230,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Members/Conf/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="35" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="35" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Members/ThinkPHP/Extend/Model/AdvModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Members/Common/common.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="329" column="0" selection-start="9163" selection-end="9163" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1353253926921" expanded="false" signature="4180:4304" placeholder="..." />
+            <marker date="1353413431937" expanded="false" signature="4180:4304" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Members/ThinkPHP/Lib/Core/Action.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="23" selection-start="10955" selection-end="10955" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="289" column="23" selection-start="10955" selection-end="10955" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Members/ThinkPHP/Extend/Model/AdvModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Members/Lib/Action/InitAction.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
+        <state line="7" column="6" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/AgentsAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.142858" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Members/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="35" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/UsersAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="12" selection-start="372" selection-end="393" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/SalesAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="72" selection-start="3955" selection-end="3955" vertical-scroll-proportion="-0.6785714" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/AjaxAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="39" selection-start="909" selection-end="909" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Members/Common/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="245" column="29" selection-start="6224" selection-end="6224" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1353413431937" expanded="false" signature="4180:4304" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/RegisterAction.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="7" selection-start="5815" selection-end="5815" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Members/Lib/Action/LoginAction.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="149" selection-end="149" vertical-scroll-proportion="6.535714">
+        <state line="28" column="59" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/AgentsAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.142858">
-          <folding>
-            <marker date="1352695266841" expanded="false" signature="1128:1138" placeholder="..." />
-            <marker date="1352695266841" expanded="false" signature="1167:1179" placeholder="..." />
-            <marker date="1352695266841" expanded="false" signature="4036:4046" placeholder="..." />
-            <marker date="1352695266841" expanded="false" signature="4075:4087" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Members/Common/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="35" selection-start="3641" selection-end="3667" vertical-scroll-proportion="-16.285715">
-          <folding>
-            <marker date="1353253926921" expanded="false" signature="4180:4304" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Members/Lib/Model/SalesModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="56" selection-start="5724" selection-end="5724" vertical-scroll-proportion="-100.42857">
+        <state line="200" column="59" selection-start="8127" selection-end="8127" vertical-scroll-proportion="-0.04796163">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Members/Conf/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="35" selection-start="158" selection-end="158" vertical-scroll-proportion="-4.071429">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/UsersAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="12" selection-start="372" selection-end="393" vertical-scroll-proportion="-6.785714">
-          <folding>
-            <marker date="1353178327937" expanded="false" signature="1797:1807" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="1836:1848" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="5268:5278" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="5372:5382" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="6127:6137" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="6166:6178" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="10417:10427" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="10456:10468" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="11155:11165" placeholder="..." />
-            <marker date="1353178327937" expanded="false" signature="11194:11206" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Members/Lib/Action/SalesAction.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="72" selection-start="3955" selection-end="3955" vertical-scroll-proportion="1.6234888">
-          <folding>
-            <marker date="1353254096593" expanded="true" signature="1469:1481" placeholder="..." />
-            <marker date="1353254096593" expanded="false" signature="1606:1617" placeholder="..." />
-            <marker date="1353254096593" expanded="false" signature="1742:1751" placeholder="..." />
-            <marker date="1353254096593" expanded="true" signature="3974:3984" placeholder="..." />
-            <marker date="1353254096593" expanded="true" signature="4077:4089" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>

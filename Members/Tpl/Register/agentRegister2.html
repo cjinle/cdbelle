@@ -18,26 +18,27 @@
 				<a href="__ROOT__/index.php?m=Register" title="返上一个页面">返上一个页面</a>
 			</div>
 			<div style="width:300px;float:left;">
-			<label class="my_label">用户名<span class="mark">*</span></label>
+			<label class="my_label">用户编号<span class="mark">*</span></label>
 			<div class="line">
 				<input type="text" name="user_name" id="user_name" value="" class="textbox ro" style="color:#904;font-weight:bold;" readonly="readonly" />&nbsp;
 			</div>
-			<span id="Required_UserName" style="color: red;visibility: visibe;">用户名在选择地区时自动生成</span>
-			<label class="my_label">代理商名称<span class="mark">*</span></label>
+			<span id="Required_UserName" style="color: red;visibility: visibe;">用户编号在选择地区时自动生成</span>
+			<label class="my_label">用户名<span class="mark">*</span></label>
 			<div class="line">
-				<input type="text" name="real_name" value="" class="textbox"  />&nbsp;
+				<input type="text" id="real_name" name="real_name" value="" class="textbox"  />&nbsp;
+				<input type="hidden" name="real_name_flg" value="0" /> 
 			</div>
-			<span id="Required_RealName" style="color: red;visibility: hidden;">代理商名称不能为空</span>
+			<span id="Required_RealName" style="color: red;visibility: hidden;">用户名不能为空</span>
+			<label class="my_label">公司名称<span class="mark">*</span></label>
+			<div class="line">
+				<input type="text" name="company" value="" class="textbox"  />&nbsp;
+			</div>
+			<span id="Required_Company" style="color: red;visibility: hidden;">公司名称不能为空</span>
 			<label class="my_label">电子邮件<span class="mark">*</span></label>
 			<div class="line">
 				<input type="text" name="email" value="" class="textbox"  />&nbsp;
 			</div>
 			<span id="Required_Email" style="color: red;visibility: hidden;">电子邮件不能为空</span>
-			<label class="my_label">QQ</label>
-			<div class="line">
-				<input type="text" name="qq" value="" class="textbox"  />&nbsp;
-			</div>
-			<span style="color: red;visibility: hidden;">qq</span>
 			<label class="my_label">联系电话<span class="mark">*</span></label>
 			<div class="line">
 				<input type="text" name="mobile_phone" value="" class="textbox"  />&nbsp;
@@ -66,6 +67,11 @@
 				<input type="text" name="address" value="" class="textbox" style="width:280px;"  />&nbsp;
 			</div>
 			<span style="visibility: hidden;">空</span>
+			<label class="my_label">QQ</label>
+			<div class="line">
+				<input type="text" name="qq" value="" class="textbox"  />&nbsp;
+			</div>
+			<span style="color: red;visibility: hidden;">qq</span>
 			<label class="my_label">密码<span class="mark">*</span></label>
 			<div class="line">
 				<input type="password" name="new_pwd" value="" class="textbox"  />&nbsp;
@@ -95,6 +101,8 @@
 $(document).ready(function(){
 	$("form").submit(function(){
 		var msg = '';
+		var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+		var email = $("input[name='email']").val();
 		var pwd = $("input[name='new_pwd']").val();
 		if ($("input[name='user_name']").val() == "") {
 			$("#Required_UserName").html("请选择右边所属地区");
@@ -105,11 +113,23 @@ $(document).ready(function(){
 			$("#Required_Province").css("visibility", "hidden");
 		}
 		if ($("input[name='real_name']").val() == "") {
+			$("#Required_RealName").html("用户名不能为空");
+			$("#Required_RealName").css("visibility", "visible");
+		} else if ($("input[name='real_name_flg']").val() == "0") {
+			$("#Required_RealName").html("用户名已存在");
 			$("#Required_RealName").css("visibility", "visible");
 		} else {
 			$("#Required_RealName").css("visibility", "hidden");
 		}
-		if ($("input[name='email']").val() == "") {
+		if ($("input[name='company']").val() == "") {
+			$("#Required_Company").css("visibility", "visible");
+		} else {
+			$("#Required_Company").css("visibility", "hidden");
+		}
+		if (email == "") {
+			$("#Required_Email").css("visibility", "visible");
+		} else if (!myreg.test(email)) {
+			$("#Required_Email").html("请填写有效的邮箱地址");
 			$("#Required_Email").css("visibility", "visible");
 		} else {
 			$("#Required_Email").css("visibility", "hidden");
@@ -129,11 +149,27 @@ $(document).ready(function(){
 		} else {
 			$("#Required_ConfirmNewPwd").css("visibility", "hidden");
 		}
-		if (($("input[name='user_name']").val() == "")||($("input[name='real_name']").val() == "")||
-			($("input[name='email']").val() == "")||(pwd.length < 6)||($("input[name='new_pwd']").val() != $("input[name='confirm_new_pwd']").val())) {
+		if (($("input[name='user_name']").val() == "")||($("input[name='real_name']").val() == "")||($("input[name='real_name_flg']").val() == "0")||
+			(email == "")||(!myreg.test(email))||(pwd.length < 6)||($("input[name='new_pwd']").val() != $("input[name='confirm_new_pwd']").val())) {
+			
 			return false;
 		}
 		
+	});
+	$("#real_name").change(function(){
+		$.get(
+			'__ROOT__/index.php?m=Ajax&a=check_real_name',
+			'real_name=' + this.value,
+			function(data){
+				data = parseInt(data);
+				if (!data) {
+					$("input[name='real_name_flg']").val(1);
+				} else {
+					$("input[name='real_name_flg']").val(0);
+					$("#Required_RealName").css("visibility", "hidden");
+				}
+			}
+		);	
 	});
 	$("#province").change(function(){
 		$.get(

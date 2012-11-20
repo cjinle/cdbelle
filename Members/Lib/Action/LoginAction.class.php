@@ -26,7 +26,7 @@ class LoginAction extends Action {
 		$password = addslashes(trim($_POST['password']));
 		$expiration = intval($_POST['expiration']);
 		$User = M('users');
-		$user_info = $User->field()->where(array('user_name'=>$user_name))->find();
+		$user_info = $User->field()->where(array('real_name'=>$user_name))->find();
 		if ($user_info) {
 			$user_priv = M('user_priv')->where(array('up_id'=>$user_info['user_priv']))->find();
 			if (md5($password . $user_info['salt']) === $user_info['password']) {

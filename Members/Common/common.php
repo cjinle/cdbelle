@@ -238,6 +238,18 @@ function check_card_no_is_available($card_no) {
 }
 
 /**
+ * check real name available
+ * @param string $real_name
+ * @return boolean
+ */
+function check_real_name_is_available($real_name) {
+    if (!empty($real_name)) {
+        $cnt = M('users')->where(array('real_name'=>$real_name))->count();
+        return $cnt ? FALSE : TRUE;
+    }
+}
+
+/**
  * get card number which is banded.
  * @param integer $user_id
  * @return string
